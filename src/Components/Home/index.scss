@@ -1,5 +1,5 @@
 .home-page{
-    
+    width: 90vw;
     .text-zone{
         position: absolute;
         top: 50%;
@@ -56,6 +56,16 @@
         &:hover{
             background-color: #ffd700;
             color: #333;
+        }
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .home-page{
+        .text-zone{
+            position: absolute;
+            top: 60%;
+            width: 100%;
         }
     }
 }

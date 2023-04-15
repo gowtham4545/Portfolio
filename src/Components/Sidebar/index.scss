@@ -97,10 +97,24 @@
             }
         }
 
+        a.my-work {
+            &::after {
+                content: "PROJECTS";
+                position: absolute;
+                left: -75%;
+                top: -40%;
+            }
+        }
+
         a.active {
             svg {
                 color: #ffd700;
             }
         }
     }
+
+    .hamgurger-icon, .close-icon {
+        display: none;
+    }
 }
+
