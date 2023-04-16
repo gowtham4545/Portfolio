@@ -1,5 +1,5 @@
 .nav-bar {
-    background: #181818;
+    background: transparent;
     width: 60px;
     height: 100%;
     position: absolute;
@@ -101,7 +101,16 @@
             &::after {
                 content: "PROJECTS";
                 position: absolute;
-                left: -75%;
+                left: -55%;
+                top: -40%;
+            }
+        }
+
+        a.skills-link {
+            &::after {
+                content: "SKILLS";
+                position: absolute;
+                left: -25%;
                 top: -40%;
             }
         }

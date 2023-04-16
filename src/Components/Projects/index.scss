@@ -1,0 +1,74 @@
+.project-page {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+
+    .text-zone {
+        position: relative;
+        top: 50px;
+        width: 100%;
+        max-height: 90%;
+
+        h1 {
+            font-size: 53px;
+            font-family: "Coolvetica";
+            color: #ffd700;
+            font-weight: 400;
+            margin-top: 0;
+            position: relative;
+            margin-bottom: 40px;
+            left: 10px;
+        }
+    }
+
+    .projects {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 35px;
+        align-items: flex-start;
+
+        .project {
+            width: fit-content;
+            height: 250px;
+            margin: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            border-radius: 20px;
+            animation: flipInX 2s 0s forwards;
+            clear: both;
+            a {
+                text-decoration: none;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                font-family: Raleway;
+                font-size: large;
+                color: aliceblue;
+                text-align: center;
+
+                img {
+                    width: auto;
+                    height: 200px;
+                    border-radius: 30px;
+                    margin-bottom: 10px;
+                    opacity: 0;
+                    animation: fadeIn 2s 2s forwards;
+                    clear: both;
+                }
+            }
+        }
+        .project:hover{
+            background-color: rgb(37, 37, 37);
+            box-shadow: 0 0 10px 0 white;
+        }
+    }
+}
+
+.project-page::-webkit-scrollbar {
+    display: none;
+}
+

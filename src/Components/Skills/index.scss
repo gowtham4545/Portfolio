@@ -1,0 +1,93 @@
+.skill-page {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+
+    .text-zone {
+        position: relative;
+        top: 50px;
+        width: 100%;
+        max-height: 90%;
+
+        h1 {
+            font-size: 53px;
+            font-family: "Coolvetica";
+            color: #ffd700;
+            font-weight: 400;
+            margin-top: 0;
+            position: relative;
+            margin-bottom: 40px;
+            left: 10px;
+        }
+    }
+
+    .skills {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        // padding: 35px;
+        align-items: flex-start;
+
+        .block {
+            height: fit-content;
+            width: 500px;
+            border: 0.1px solid;
+            background-color: rgb(37, 37, 37);
+            margin: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            border-radius: 20px;
+            animation: flipInX 2s 0s forwards;
+            clear: both;
+
+            h2 {
+                color: aliceblue;
+                font-size: 25px;
+                font-family: Raleway;
+            }
+
+            .box {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                height: auto;
+                justify-content: center;
+                align-items: center;
+
+                .unit {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    opacity: 0;
+                    animation: bounceIn 2s 2s forwards;
+                    clear: both;
+                    margin: 0px;
+
+                    h3 {
+                        font-family: Raleway;
+                        color: #ffd700;
+                    }
+                    .icon {
+                        height: 40px;
+                        margin: 30px;
+                        margin-bottom: 10px;
+                    }
+                }
+
+            }
+        }
+        .block:hover {
+            background-color: rgb(37, 37, 37);
+            box-shadow: 0 0 10px 0 white;
+        }
+    }
+}
+
+.skill-page::-webkit-scrollbar {
+    display: none;
+}

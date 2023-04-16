@@ -118,7 +118,7 @@
 
 @media screen and (max-width:1200px) {
     .cubespinner{
-        // display: none;
+        display: none;
         position: absolute;
         top: 70%;
         display: flex;
@@ -130,7 +130,7 @@
     }
     .stage-cube-cont{
         position: relative;
-        display: flex;
+        display: none;
         justify-content: center;
         width: 70% ;
         padding: 50px;
@@ -141,6 +141,8 @@
         flex-direction: row-reverse;
         overflow: scroll;
         justify-content: center;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
         .text-zone{
             width: auto;
             transform: none;
@@ -148,5 +150,8 @@
             top: 20%;
             padding: 10px;
         }
+    }
+    .about-page::-webkit-scrollbar{
+        display: none;
     }
 }
