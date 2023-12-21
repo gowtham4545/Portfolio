@@ -3,7 +3,7 @@ import Loader from 'react-loaders'
 import AnimatedLetters from '../Animated'
 import './index.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCss3Alt, faGitAlt, faHtml5, faJava, faJsSquare, faLinux, faNodeJs, faPython, faReact, faWindows } from '@fortawesome/free-brands-svg-icons'
+import { faAws, faCss3Alt, faGitAlt, faHtml5, faJava, faJsSquare, faLinux, faNodeJs, faPython, faReact, faWindows } from '@fortawesome/free-brands-svg-icons'
 
 
 const Skills = () => {
@@ -24,8 +24,12 @@ const Skills = () => {
                 </div>
                 <div className='skills' >
                     <div className='block'>
-                        <h2>Languages</h2>
+                        {/* <h2>Languages</h2> */}
                         <div className='box'>
+                            {/* <div className='unit'>
+                                <FontAwesomeIcon className='icon' icon={faC} color='#006178' />
+                                <h3>C++</h3>
+                            </div> */}
                             <div className='unit'>
                                 <FontAwesomeIcon className='icon' icon={faJava} color='#006178' />
                                 <h3>Java</h3>
@@ -65,6 +69,10 @@ const Skills = () => {
                             <div className='unit'>
                                 <FontAwesomeIcon className='icon' icon={faWindows} color='#fff' />
                                 <h3>Windows</h3>
+                            </div>
+                            <div className='unit'>
+                                <FontAwesomeIcon className='icon' icon={faAws} color='#fff' />
+                                <h3>AWS</h3>
                             </div>
                         </div>
                     </div>

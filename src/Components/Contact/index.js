@@ -3,16 +3,33 @@ import './index.scss'
 import Loader from 'react-loaders';
 import AnimatedLetters from '../Animated';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedinIn, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faInstagram, faLinkedinIn, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { Form, redirect, useLocation } from 'react-router-dom';
 
 const Contact = () => {
+    const location = useLocation();
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [subject, setSubject] = useState('');
+    const [message, setMessage] = useState('');
     const [letterClass, setLetterClass] = useState('text-animate');
+    const clear = () => {
+        setName('');
+        setEmail('');
+        setMessage('');
+        setSubject('');
+    }
     const refForm = useRef();
+    const scriptUrl = 'https://script.google.com/macros/s/AKfycbyWladfWqVo2uQmfbAkwn2jQDFv14OWSYttCLjx1pCHpPjKyTxeBi92pUhEEnxlSJb3/exec';
     const sendEmail = (e) => {
         e.preventDefault()
-        alert('Message Successfully sent!');
+        var a = fetch(scriptUrl, { method: 'POST', body: new FormData(refForm.current) });
+        a.then(response => {
+            clear();
+        }).catch(err => {
+            alert('Error sending message!!!');
+        })
     }
-
     setTimeout(() => {
         setLetterClass('text-animate-hover')
     }, 5000)
@@ -21,26 +38,26 @@ const Contact = () => {
             <div className='container contact-page' >
                 <div className='text-zone'>
                     <h1>
-                        <AnimatedLetters strArray={['C', 'o', 'n', 't', 'a', 'c', 't', ' ', 'm', 'e']} letterClass={letterClass} idx={12} />
+                        <AnimatedLetters strArray={['C', 'o', 'n', 't', 'a', 'c', 't', ' ', 'M', 'e']} letterClass={letterClass} idx={12} />
                     </h1>
                     <div className='box'>
                         <div className='contact-form'>
-                            <form ref={refForm} onSubmit={sendEmail}>
+                            <form ref={refForm} action={''} method='post' onSubmit={sendEmail}>
                                 <ul>
                                     <li className='half'>
-                                        <input type='text' name='name' placeholder='Name' required />
+                                        <input type='text' name='name' value={name} onChange={(e) => setName(e.target.value)} placeholder='Name' required />
                                     </li>
                                     <li className='half'>
-                                        <input type='email' name='email' placeholder='Email' required />
+                                        <input type='email' name='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email' required />
                                     </li>
                                     <li className=''>
-                                        <input type='text' name='subject' placeholder="Subject" required />
+                                        <input type='text' name='subject' value={subject} onChange={e => setSubject(e.target.value)} placeholder="Subject" required />
                                     </li>
                                     <li>
-                                        <textarea placeholder='Message' name='message' required></textarea>
+                                        <textarea placeholder='Message' value={message} onChange={e => setMessage(e.target.value)} name='message' required></textarea>
                                     </li>
                                     <li>
-                                        <input type='submit' className='flat-button' value={'SEND'} />
+                                        <input type='submit' id='button' className='flat-button' value={'SEND'} onClick={e => clear} />
                                     </li>
                                 </ul>
                             </form>
@@ -52,8 +69,8 @@ const Contact = () => {
                             <a href='https://www.linkedin.com/in/gowtham4545/'>
                                 <FontAwesomeIcon className='icon' icon={faLinkedinIn} color='#0A66C2' />
                             </a>
-                            <a href=''>
-                                <FontAwesomeIcon className='icon' icon={faTwitter} color='#0A66C2' />
+                            <a href='https://www.instagram.com/gowtham4__/'>
+                                <FontAwesomeIcon className='icon' icon={faInstagram} color={'#fd17ba'} />
                             </a>
                         </div>
                     </div>
@@ -62,6 +79,7 @@ const Contact = () => {
             <Loader type='pacman' />
         </>
     )
+    // #FD17BA
 }
 
 export default Contact;
