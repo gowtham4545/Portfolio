@@ -5,7 +5,7 @@ import './index.scss'
 import gather from '../../Data/Images/1.jpg';
 import binary from '../../Data/Images/2.png';
 import face from '../../Data/Images/3.png';
-import faceRecog from '../../Data/Images/faceRecognition.gif';
+import faceRecog from '../../Data/Images/faceRecognition.jpg';
 
 
 const Project = () => {
@@ -46,7 +46,7 @@ const Project = () => {
                     <div className='project'>
                         <a href='https://github.com/gowtham4545/Project'>
                             <img src={faceRecog} alt='' />
-                            Vision.io : Face Recognition App
+                            Sign2Sound : Sign Language to Speech
                         </a>
                     </div>
                 </div>
