@@ -23,12 +23,28 @@ const Contact = () => {
     const scriptUrl = 'https://script.google.com/macros/s/AKfycbyWladfWqVo2uQmfbAkwn2jQDFv14OWSYttCLjx1pCHpPjKyTxeBi92pUhEEnxlSJb3/exec';
     const sendEmail = (e) => {
         e.preventDefault()
-        var a = fetch(scriptUrl, { method: 'POST', body: new FormData(refForm.current) });
-        a.then(response => {
-            clear();
-        }).catch(err => {
-            alert('Error sending message!!!');
+        // var a = fetch(scriptUrl, { method: 'POST', body: new FormData(refForm.current) });
+        // a.then(response => {
+        //     clear();
+        // }).catch(err => {
+        //     alert('Error sending message!!!');
+        // })
+        let content = `Subject: ${subject}\n\n${message}`
+
+        const baseURL = 'https://gowtham-api.vercel.app/mail';  // Replace with your actual API endpoint
+        const uri = `${baseURL}?name=${encodeURIComponent(name)}&message=${encodeURIComponent(content)}&email=${encodeURIComponent(email)}`;
+
+        // Make the GET request using fetch
+        fetch(uri, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
         })
+
+        let url = `https://gowtham-api.vercel.app/mail?name=${name}&email=${email}&message=${content}`
+        console.log(uri);
+        // fetch(url)
     }
     setTimeout(() => {
         setLetterClass('text-animate-hover')
