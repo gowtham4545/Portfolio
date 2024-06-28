@@ -32,7 +32,7 @@ const Contact = () => {
         let content = `Subject: ${subject}\n\n${message}`
 
         const baseURL = 'https://gowtham-api.vercel.app/mail';  // Replace with your actual API endpoint
-        const uri = `${baseURL}?name=${encodeURIComponent(name)}&message=${encodeURIComponent(content)}&email=${encodeURIComponent(email)}`;
+        const uri = `${baseURL}?name=${encodeURIComponent(name)}&message=${encodeURIComponent(message)}&email=${encodeURIComponent(email)}&subject=${encodeURIComponent(subject)}`;
 
         // Make the GET request using fetch
         fetch(uri, {
@@ -42,7 +42,7 @@ const Contact = () => {
             }
         })
 
-        let url = `https://gowtham-api.vercel.app/mail?name=${name}&email=${email}&message=${content}`
+        let url = `https://gowtham-api.vercel.app/mail?name=${name}&email=${email}&message=${content}&subject=${subject}`
         console.log(uri);
         // fetch(url)
     }
