@@ -27,7 +27,7 @@ const Home = () => {
                         <img src={LogoTitle} alt='developer' />
                         <AnimatedLetters letterClass={letterClass} strArray={nameArray} idx={18} />
                     </h1>
-                    <h2>Full Stack Developer | Tech Enthusiast</h2>
+                    <h2>Software Engineer | Tech Enthusiast</h2>
                     <Link to={'/contact'} className='flat-button'>CONTACT ME</Link>
                 </div>
 

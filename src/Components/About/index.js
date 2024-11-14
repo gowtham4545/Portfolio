@@ -19,8 +19,8 @@ const About = () => {
                     <h1>
                         <AnimatedLetters strArray={['A', 'b', 'o', 'u', 't', ' ', 'm', 'e']} idx={12} letterClass={letterClass} />
                     </h1>
-                    <p>I am a B.Tech undergrad studying Information science and Engineering at UVCE, Bangalore.</p>
-                    <p>I am an ambitious full-stack developer looking forward for a role in established IT company with the opportunity to work with the latest technologies on challenging and diverse projects.</p>
+                    <p>I'm currently working as an Associate SW Systems Engineer at Extreme Networks.</p>
+                    <p>With a strong passion for software engineering and systems development, I thrive on solving complex problems and creating innovative solutions.</p>
                     <p>I'm quiet confident, naturally curious, and perpetually working on improving my chops one design problem at a time.</p>
                 </div>
                 <div className='stage-cube-cont'>

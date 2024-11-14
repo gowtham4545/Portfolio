@@ -21,7 +21,7 @@ const Contact = () => {
     }
     const refForm = useRef();
     const scriptUrl = 'https://script.google.com/macros/s/AKfycbyWladfWqVo2uQmfbAkwn2jQDFv14OWSYttCLjx1pCHpPjKyTxeBi92pUhEEnxlSJb3/exec';
-    const sendEmail = (e) => {
+    const sendEmail = async (e) => {
         e.preventDefault()
         // var a = fetch(scriptUrl, { method: 'POST', body: new FormData(refForm.current) });
         // a.then(response => {
@@ -35,16 +35,22 @@ const Contact = () => {
         const uri = `${baseURL}?name=${encodeURIComponent(name)}&message=${encodeURIComponent(message)}&email=${encodeURIComponent(email)}&subject=${encodeURIComponent(subject)}`;
 
         // Make the GET request using fetch
-        fetch(uri, {
+        let res = await fetch(uri, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
             }
         })
+        res = await res.json();
+        console.log("Result:", res.status);
 
         let url = `https://gowtham-api.vercel.app/mail?name=${name}&email=${email}&message=${content}&subject=${subject}`
         console.log(uri);
         // fetch(url)
+        setName("")
+        setEmail("")
+        setMessage("")
+        setSubject("")
     }
     setTimeout(() => {
         setLetterClass('text-animate-hover')
